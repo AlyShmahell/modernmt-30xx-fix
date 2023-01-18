@@ -1,0 +1,14 @@
+--- fairseq-0.10.1/fairseq/utils.py	2020-11-21 18:39:09.000000000 +0100
++++ utils.py	2023-01-18 15:39:47.642018607 +0100
+@@ -434,9 +434,10 @@
+         module_path = os.path.abspath(args.user_dir)
+         if not os.path.exists(module_path):
+             fairseq_rel_path = os.path.join(os.path.dirname(__file__), args.user_dir)
++            module_parent, module_name = os.path.split(module_path)
+             if os.path.exists(fairseq_rel_path):
+                 module_path = fairseq_rel_path
+-            else:
++            elif not os.path.exists(module_parent):
+                 fairseq_rel_path = os.path.join(
+                     os.path.dirname(__file__), "..", args.user_dir
+                 )

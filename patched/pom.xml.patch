@@ -1,0 +1,26 @@
+--- modernmt/src/pom.xml	2023-01-18 15:40:02.433743390 +0100
++++ pom.xml	2023-01-18 15:39:47.638018683 +0100
+@@ -31,7 +31,7 @@
+ 
+         <lucene.version>4.10.4</lucene.version>
+         <kafka.version>2.4.0</kafka.version>
+-        <cassandra.version>3.11.10</cassandra.version>
++        <cassandra.version>3.11.14</cassandra.version>
+ 
+         <mmt.version>4.9.5</mmt.version>
+         <mmt.build.number>${maven.build.timestamp}</mmt.build.number>
+@@ -86,12 +86,12 @@
+         <dependency>
+             <groupId>org.apache.logging.log4j</groupId>
+             <artifactId>log4j-core</artifactId>
+-            <version>2.13.2</version>
++            <version>2.17.0</version>
+         </dependency>
+         <dependency>
+             <groupId>commons-io</groupId>
+             <artifactId>commons-io</artifactId>
+-            <version>2.4</version>
++            <version>2.7</version>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.commons</groupId>

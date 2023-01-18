@@ -1,0 +1,20 @@
+#!/bin/bash
+
+git clone https://github.com/modernmt/modernmt && cd modernmt && git checkout v4.9.5 && cd ..
+
+patch modernmt/setup.py                 patched/setup.py.patch
+patch modernmt/requirements.txt         patched/requirements.txt.patch
+patch modernmt/requirements_cuda-11.txt patched/requirements_cuda-11.txt.patch
+patch modernmt/src/pom.xml              patched/pom.xml.patch
+patch modernmt/src/textprocessing/src/main/java/eu/modernmt/processing/normalizers/ChineseCharacterConverter.java patched/ChineseCharacterConverter.java.patch
+patch modernmt/src/decoder-neural/src/main/python/mmt/textencoder.py  patched/textencoder.py.patch
+
+cd modernmt && python3 setup.py && cd ..
+
+pip show fairseq | grep  Location | grep -o [\s/].* | xargs -I {} patch {}/fairseq/utils.py patched/utils.py.patch
+
+mv -r modernmt tmp
+
+mv -r . ../modernmt
+
+mv -r tmp/* ./

@@ -1,0 +1,10 @@
+--- modernmt/src/decoder-neural/src/main/python/mmt/textencoder.py	2023-01-18 15:40:02.377744432 +0100
++++ textencoder.py	2023-01-18 15:39:47.638018683 +0100
+@@ -545,7 +545,6 @@
+             ret.extend(self._subtokens_of(token))
+         return ret
+ 
+-    @cachetools.cachedmethod(cache=lambda self: self._cache, key=lambda token: token)
+     def _subtokens_of(self, token):
+         return self._subtokens_of_escaped(_escape_token(token, self._alphabet))
+ 

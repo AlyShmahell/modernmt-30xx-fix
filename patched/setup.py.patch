@@ -1,0 +1,11 @@
+--- modernmt/setup.py	2023-01-18 16:12:54.580997730 +0100
++++ setup.py	2023-01-18 16:15:24.774198002 +0100
+@@ -8,7 +8,7 @@
+ from cli.utils import osutils
+ from cli.utils.progressbar import Progressbar, UndefinedProgressbar
+ 
+-CASSANDRA_VERSION = '3.11.10'
++CASSANDRA_VERSION = '3.11.14'
+ CASSANDRA_FILE_SIZE = 38289255
+ KAFKA_VERSION = '2.4.0'
+ KAFKA_SCALA_VERSION = '2.12'

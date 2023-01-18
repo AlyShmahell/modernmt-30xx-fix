@@ -1,0 +1,11 @@
+--- modernmt/requirements_cuda-11.txt	2023-01-18 15:40:02.277746293 +0100
++++ requirements.txt	2023-01-18 15:39:47.638018683 +0100
+@@ -3,5 +3,6 @@
+ requests
+ cachetools
+ tensorboardX==2.1
+-torch==1.7.1+cu110
++torch==1.7.0+cu110
+ fairseq==0.10.1
++protobuf==3.20.*
++numpy==1.23.*
