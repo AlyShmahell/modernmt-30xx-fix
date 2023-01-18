@@ -13,8 +13,8 @@ cd modernmt && python3 setup.py && cd ..
 
 pip show fairseq | grep  Location | grep -o [\s/].* | xargs -I {} patch {}/fairseq/utils.py patched/utils.py.patch
 
-mv -r modernmt tmp
+mv modernmt tmp
 
-mv -r . ../modernmt
+cd .. && mv modernmt-30xx-fix modernmt && cd modernmt
 
-mv -r tmp/* ./
+mv tmp/* ./
