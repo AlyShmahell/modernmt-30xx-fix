@@ -8,13 +8,8 @@ patch modernmt/requirements_cuda-11.txt patched/requirements_cuda-11.txt.patch
 patch modernmt/src/pom.xml              patched/pom.xml.patch
 patch modernmt/src/textprocessing/src/main/java/eu/modernmt/processing/normalizers/ChineseCharacterConverter.java patched/ChineseCharacterConverter.java.patch
 patch modernmt/src/decoder-neural/src/main/python/mmt/textencoder.py  patched/textencoder.py.patch
-
-cd modernmt && python3 setup.py && cd ..
-
-pip show fairseq | grep  Location | grep -o [\s/].* | xargs -I {} patch {}/fairseq/utils.py patched/utils.py.patch
+pip install fairseq==0.10.1 && pip show fairseq | grep  Location | grep -o [\s/].* | xargs -I {} patch {}/fairseq/utils.py patched/utils.py.patch
 
 mv modernmt tmp
-
 cd .. && mv modernmt-30xx-fix modernmt && cd modernmt
-
 mv tmp/* ./
